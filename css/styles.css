@@ -1,0 +1,721 @@
+/*
+=============== 
+Fonts
+===============
+*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap');
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+	/* dark shades of primary color*/
+	--clr-primary-1: hsl(216, 99%, 37%);
+	--clr-primary-2: hsl(216, 99%, 43%);
+	--clr-primary-3: hsl(216, 99%, 50%);
+	--clr-primary-4: hsl(216, 99%, 57%);
+	/* primary/main color */
+	--clr-primary-5: hsl(216, 99%, 63%);
+	/* lighter shades of primary color */
+	--clr-primary-6: hsl(216, 99%, 70%);
+	--clr-primary-7: hsl(216, 98%, 77%);
+	--clr-primary-8: hsl(216, 100%, 83%);
+	--clr-primary-9: hsl(215, 100%, 90%);
+	--clr-primary-10: hsl(215, 100%, 97%);
+	/* darkest grey - used for headings */
+	--clr-grey-1: hsl(209, 61%, 16%);
+	--clr-grey-2: hsl(211, 39%, 23%);
+	--clr-grey-3: hsl(209, 34%, 30%);
+	--clr-grey-4: hsl(209, 28%, 39%);
+	/* grey used for paragraphs */
+	--clr-grey-5: hsl(210, 22%, 49%);
+	--clr-grey-6: hsl(209, 23%, 60%);
+	--clr-grey-7: hsl(211, 27%, 70%);
+	--clr-grey-8: hsl(210, 31%, 80%);
+	--clr-grey-9: hsl(212, 33%, 89%);
+	--clr-grey-10: hsl(210, 36%, 96%);
+	/* end of color from other project */
+	--clr-white: #fff;
+	--ff-primary: 'Roboto', sans-serif;
+	--ff-secondary: 'Open Sans', sans-serif;
+	--transition: all 0.3s linear;
+	--spacing: 0.15rem;
+	--radius: 0.5rem;
+	--light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+	--dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+	--max-width: 1170px;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: var(--ff-secondary);
+	background: var(--clr-white);
+	color: var(--clr-grey-1);
+	line-height: 1.5;
+	font-size: 0.875rem;
+}
+ul {
+	list-style-type: none;
+}
+a {
+	text-decoration: none;
+}
+img:not(.nav-logo) {
+	width: 100%;
+	display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	letter-spacing: var(--spacing);
+	text-transform: capitalize;
+	line-height: 1.25;
+	margin-bottom: 0.75rem;
+	font-family: var(--ff-primary);
+}
+h1 {
+	font-size: 3rem;
+}
+h2 {
+	font-size: 2rem;
+}
+h3 {
+	font-size: 1.25rem;
+}
+h4 {
+	font-size: 0.875rem;
+}
+p {
+	margin-bottom: 1.25rem;
+	color: var(--clr-grey-5);
+	font-size: 1.1rem;
+}
+@media screen and (min-width: 800px) {
+	h1 {
+		font-size: 4rem;
+	}
+	h2 {
+		font-size: 2.5rem;
+	}
+	h3 {
+		font-size: 1.75rem;
+	}
+	h4 {
+		font-size: 1rem;
+	}
+	body {
+		font-size: 1rem;
+	}
+	h1,
+	h2,
+	h3,
+	h4 {
+		line-height: 1;
+	}
+}
+/*  global classes */
+
+.btn {
+	text-transform: uppercase;
+	background: var(--clr-primary-5);
+	color: var(--clr-primary-10);
+	padding: 0.375rem 0.75rem;
+	letter-spacing: var(--spacing);
+	display: inline-block;
+	font-weight: 700;
+	-webkit-transition: var(--transition);
+	transition: var(--transition);
+	font-size: 0.875rem;
+	border: 2px solid transparent;
+	cursor: pointer;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	border-radius: var(--radius);
+}
+.btn:hover {
+	color: var(--clr-primary-1);
+	background: var(--clr-primary-7);
+}
+/* section */
+.section {
+	padding: 5rem 0;
+}
+
+.section-center {
+	width: 90vw;
+	margin: 0 auto;
+	max-width: 1170px;
+}
+@media screen and (min-width: 992px) {
+	.section-center {
+		width: 95vw;
+	}
+}
+
+/* added during recording */
+
+.underline {
+	width: 5rem;
+	height: 0.25rem;
+	margin-bottom: 1.25rem;
+	background: var(--clr-primary-5);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.section-title {
+	margin-bottom: 4rem;
+	text-align: center;
+}
+
+.bg-grey {
+	background: var(--clr-grey-10);
+}
+
+/*
+=============== 
+Navbar
+===============
+*/
+
+/* let's start by hiding the links */
+
+.nav-logo {
+	padding-left: 2rem;
+}
+.nav-links {
+	display: none;
+	/* border: 2px solid red; */
+}
+
+/* we've set up the .nav as the parent container for our grid layout */
+.nav {
+	height: 5rem;
+	padding: 1rem;
+	display: grid;
+	align-items: center;
+	transition: var(--transition);
+	/* border: 2px solid red; */
+}
+
+.nav-center {
+	/* border: 2px solid blue; */
+	width: 100%;
+	max-width: var(--max-width);
+	/* this will ensure the nav-center will always be in the center */
+	margin: 0 auto;
+}
+
+.nav-header {
+	/* border: 2px solid green; */
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+}
+
+.nav-btn {
+	background: transparent;
+	border: transparent;
+	color: var(--clr-primary-5);
+	cursor: pointer;
+	font-size: 2rem;
+	/* place the item on the right hand side of the screen */
+	/* flex-box we'd use justify-content: space-between */
+	/* with css grid we use justify-self...and place it at the end */
+	justify-self: end;
+}
+
+@media screen and (min-width: 768px) {
+	.nav {
+		background: var(--clr-primary-10);
+	}
+
+	.nav-btn {
+		display: none;
+	}
+
+	.nav-links {
+		display: grid;
+		grid-template-columns: repeat(4, auto);
+		/* background-color: aqua; */
+		/* place them in the center - this doesn't seem to do anything */
+		/* justify-items: center; */
+		gap: 3rem;
+		/* push the items to the end of the container and let the gap property provide spacing between the items */
+		justify-self: end;
+	}
+	.nav-links a {
+		/* background: purple; */
+		text-transform: capitalize;
+		color: var(--clr-primary-1);
+		transition: var(--transition);
+		font-weight: bold;
+		letter-spacing: var(--spacing);
+	}
+	.nav-links a:hover {
+		color: var(--clr-primary-7);
+	}
+
+	.nav-center {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		align-items: center;
+	}
+}
+
+/* fixed navbar */
+/* this css rule works in combination with java-script to 'fix' the navbar on the top as we scroll down the page */
+.navbar-fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: var(--clr-primary-10);
+	z-index: 1;
+	box-shadow: var(--light-shadow);
+}
+
+/*
+=============== 
+Sidebar
+===============
+*/
+
+/* we'll need to use position fixed for this, for when we 'toggle' to it it will take up a portion of the page */
+.sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/* border: 2px solid red; */
+	background: var(--clr-grey-10);
+	/* let's make sure this stay on top */
+	z-index: 100;
+	/* turn sidebar into a grid */
+	display: grid;
+	/* align the items in the center of the grid container */
+	/* align-items: center; */
+	/* justify-content: center; */
+	/* short cut for vertical and horizontal alignment used previously (align-items and justify-content) */
+	place-items: center;
+	transition: var(--transition);
+	/* add later */
+	/* this css declaration shifts the sidebar from the left to the right (full-screen) */
+	transform: translateX(-100%);
+}
+
+/* this css declaration is used to show the side-bar and is enacted when the toggle button is clicked - the javascript file and coding addresses adding this class to the .sidebar */
+.show-sidebar {
+	transform: translateX(0);
+}
+
+/* styling our sidebar-links */
+.sidebar-links {
+	/* border: 2px solid blue; */
+	text-align: center;
+}
+.sidebar-links a {
+	font-size: 2rem;
+	text-transform: capitalize;
+	transition: var(--transition);
+	color: var(--clr-primary-5);
+	letter-spacing: var(--spacing);
+	display: inline-block;
+	margin-bottom: 1.5rem;
+}
+/* let's set up a hover effect on our links */
+.sidebar-links a:hover {
+	color: var(--clr-primary-1);
+	transform: scale(1.2);
+}
+
+/* let's style our social icons */
+.social-icons {
+	display: grid;
+	margin-top: 3rem;
+	width: 20rem;
+	/* this css declaration shifts the icons from being vertically aligned to being placed on 1 row with all of the next to each other is their respective columns */
+	grid-template-columns: repeat(5, 1fr);
+	justify-items: center;
+}
+.social-icon {
+	font-size: 1.5rem;
+	color: var(--clr-primary-5);
+	transition: var(--transition);
+}
+.social-icon i:hover {
+	color: var(--clr-primary-1);
+	transform: scale(1.2);
+}
+.close-btn {
+	position: absolute;
+	top: 2rem;
+	right: 3rem;
+	font-size: 3rem;
+	background: transparent;
+	border: transparent;
+	color: #bb2525;
+	cursor: pointer;
+	transition: var(--transition);
+}
+
+.close-btn:hover {
+	color: #e66b6b;
+	transform: scale(1.2);
+}
+
+/*
+=============== 
+Hero / header
+===============
+*/
+
+/* underline added to globals */
+.hero .underline {
+	margin-left: 0;
+	margin-bottom: 0.5rem;
+}
+.hero-img {
+	display: none;
+}
+
+.hero {
+	background: var(--clr-primary-10);
+}
+.hero-center {
+	/* let's have the hero take up the entire screen - less the navbar height (5rem) */
+	min-height: calc(100vh - 5rem);
+	display: grid;
+	place-items: center;
+}
+
+.hero-info h4 {
+	color: var(--clr-grey-5);
+	font-size: 1.1rem;
+}
+
+.hero-icons {
+	/* let's align our icons on the left side of the container */
+	justify-items: start;
+}
+.hero-btn {
+	margin-top: 1.25rem;
+}
+
+@media screen and (min-width: 992px) {
+	.hero-info {
+		padding-left: 2rem;
+	}
+	.hero-img {
+		display: block;
+		position: relative;
+	}
+	/* create a two column layout */
+	.hero-center {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	/* creating the background border */
+	.hero-img::before,
+	.about-img::before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		border: 0.25rem solid var(--clr-primary-5);
+		top: -1.6rem;
+		right: -1.6rem;
+		border-radius: var(--radius);
+	}
+}
+
+.hero-photo {
+	max-width: 25rem;
+	max-height: 30rem;
+	object-fit: cover;
+	border-radius: var(--radius);
+	/* this coding places the image after the border that is created below */
+	/* position: relative; */
+}
+
+/*
+=============== 
+About
+===============
+*/
+/* section title added to globals */
+
+.about-title {
+	text-align: left;
+	margin-bottom: 2rem;
+}
+.about-title .underline {
+	margin-left: 0;
+}
+
+/* using display: grid to style our about section for margins and aligning content */
+.about-center {
+	display: grid;
+	/* in the 'gap' property the first value is for our rows and the second will be for columns */
+	/* this, on the small screen immediately places a 'gap' between the image and the About text  */
+	gap: 3rem 2rem;
+}
+.about-img {
+	/* justify-items: center also seems to work to place the image in the center on the small screen */
+	justify-self: center;
+}
+
+@media screen and (min-width: 992px) {
+	.about-center {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	/* this fixes the wonky layout when we grouped the about-img::before with the hero-img::before...they have position: absolute set within them, so we need to set .about-img to position: relative since this is the 'parent' container...the ::before coding is looking for the closest container that has 'position: relative' property */
+	.about-img {
+		position: relative;
+	}
+	.about-img::before {
+		top: -1.5rem;
+		left: -1.6rem;
+	}
+	/* placing the about-info in the center to stay aligned with the image */
+	.about-info {
+		align-self: center;
+	}
+}
+
+/*
+=============== 
+Services
+===============
+*/
+/* bg-grey in globals */
+
+/* styling the card */
+/* note we're not using 'grid' on the small screen like we did in the 'about' section.  John is wanting us to realize that you may not want to use 'grid' on the small mobile phones because some operating systems may not support grid.  Below he shows how to use 'margin' properties instead of 'grid' then 'gap' etc. John prefers to use css grid on larger screens, and keep it simple with 'margins' on the small screens */
+.service {
+	background: var(--clr-white);
+	padding: 3rem 1.5rem;
+	margin-bottom: 2rem;
+	border-radius: var(--radius);
+	text-align: center;
+	transition: var(--transition);
+}
+
+.service-icon {
+	font-size: 2rem;
+	margin-bottom: 1.5rem;
+	color: var(--clr-primary-5);
+	transition: var(--transition);
+}
+/* making the underline a bit smaller for the cards */
+.service .underline {
+	width: 3rem;
+	height: 0.15rem;
+	transition: var(--transition);
+}
+.service p {
+	transition: var(--transition);
+}
+.service:hover {
+	background: var(--clr-primary-7);
+	color: var(--clr-primary-10);
+}
+.service:hover .service-icon {
+	color: var(--clr-primary-10);
+}
+.service:hover p {
+	color: var(--clr-primary-10);
+}
+.service:hover .underline {
+	background: var(--clr-primary-10);
+}
+
+@media screen and (min-width: 676px) {
+	.services-center {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem 2rem;
+	}
+}
+
+@media screen and (min-width: 1170px) {
+	.services-center {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1rem 2rem;
+	}
+}
+
+/* small screen layout setup */
+
+/*
+=============== 
+Projects / Activities
+===============
+*/
+
+.projects-text {
+	width: 85%;
+	max-width: 30rem;
+	margin: 0 auto;
+}
+
+.project {
+	position: relative;
+	background: var(--clr-primary-5);
+	border-radius: var(--radius);
+	margin-bottom: 2rem;
+}
+
+.project-info {
+	text-align: center;
+	color: var(--clr-primary-10);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: var(--transition);
+	opacity: 0;
+}
+.project-info p {
+	text-transform: capitalize;
+	color: var(--clr-primary-10);
+}
+
+.project:hover .project-info {
+	opacity: 1;
+}
+
+.project-img {
+	transition: var(--transition);
+	border-radius: var(--radius);
+	height: 20rem;
+	object-fit: cover;
+}
+
+.project:hover .project-img {
+	opacity: 0.4;
+}
+
+.project::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0.25rem solid var(--clr-primary-10);
+	border-radius: var(--radius);
+	transition: var(--transition);
+	opacity: 0;
+}
+
+.project:hover::after {
+	opacity: 1;
+	transform: scale(0.8);
+}
+
+/* creating a two column layout */
+
+@media screen and (min-width: 676px) {
+	.projects-center {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem 2rem;
+	}
+}
+
+/* creating a three column layout */
+@media screen and (min-width: 992px) {
+	.projects-center {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* creating a three column layout with two rows with pictures spanning multiple rows */
+@media screen and (min-width: 1170px) {
+	.projects-center {
+		gap: 1rem 1rem;
+		grid-template-rows: 250px 250px;
+		grid-template-areas:
+			'a b c'
+			'a d c';
+	}
+
+	/* if we don't made these two css rules / declarations our layout will not look good! We need to make the project-img and project container both have a height of 100%!! */
+	/* we have a project-img with a height of 20rem...so we'll need to set it to 100% */
+	.project-img {
+		height: 100%;
+	}
+	/* we also need our parent container to have a height of 100%, what is the parent container??? 'project' ...this is saying 'take up 100%' of the height of the container!*/
+	.project{
+		height: 100%;
+	}
+	.project-1 {
+		grid-area: a;
+	}
+	.project-2 {
+		grid-area: b;
+	}
+	.project-3 {
+		grid-area: d;
+	}
+	.project-4 {
+		grid-area: c;
+	}
+}
+/*
+=============== 
+Connect
+===============
+*/
+
+/*
+=============== 
+Skills
+===============
+*/
+/*
+=============== 
+Timeline
+===============
+*/
+
+/*
+=============== 
+Blog
+===============
+*/
+
+/*
+=============== 
+Footer
+===============
+*/
+/*
+=============== 
+Single Page
+===============
+*/
+
+/*
+=============== 
+Products Page
+===============
+*/
