@@ -20,3 +20,15 @@ closeBtn.addEventListener("click", function () {
 });
 // set year
 date.innerHTML = new Date().getFullYear();
+
+document.querySelectorAll('.project').forEach(project => {
+	project.addEventListener('click', () => {
+		const isActive = project.classList.contains('active');
+		// Remove active class from all projects
+		document
+			.querySelectorAll('.project')
+			.forEach(p => p.classList.remove('active'));
+		// Toggle active class on the clicked project
+		if (!isActive) project.classList.add('active');
+	});
+});

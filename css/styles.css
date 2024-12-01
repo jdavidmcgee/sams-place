@@ -652,6 +652,21 @@ Projects / Activities
     transform: scale(0.8);
 }
 
+.project.active .project-info {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.project.active .project-img {
+    opacity: 0.4;
+}
+
+.project.active::after {
+    opacity: 1;
+    transform: scale(0.8);
+}
+
+
 
 /* creating a two column layout */
 
