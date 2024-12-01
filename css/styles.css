@@ -592,7 +592,11 @@ Projects / Activities
 	transform: translate(-50%, -50%);
 	transition: var(--transition);
 	opacity: 0;
+	/* Prevent interaction when not visible */
+	/* pointer-events: none;  */
+	z-index: 1; /* Ensure it's above the image */
 }
+
 .project-info p {
 	text-transform: capitalize;
 	color: var(--clr-primary-10);
@@ -600,6 +604,8 @@ Projects / Activities
 
 .project:hover .project-info {
 	opacity: 1;
+	/* Enable interaction when visible */
+	/* pointer-events: auto;  */
 }
 
 .project-img {
@@ -607,6 +613,7 @@ Projects / Activities
 	border-radius: var(--radius);
 	height: 20rem;
 	object-fit: cover;
+	z-index: 0; /* Ensure image is below the info box */
 }
 
 .project:hover .project-img {
@@ -679,6 +686,10 @@ Projects / Activities
 	.project-4 {
 		grid-area: c;
 	}
+	.project:hover::after {
+	opacity: 1;
+	transform: scale(0.9);
+}
 }
 /*
 =============== 
