@@ -771,6 +771,92 @@ Connect
 Skills
 ===============
 */
+
+@media screen and (min-width: 768px) {
+	.skills-center {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0rem 2rem;
+	}
+	
+}
+
+.skills{
+	background: var(--clr-primary-9);
+}
+
+.skills-article{
+	margin-bottom: 2rem;
+}
+
+.skills h3{
+	margin: 1.5rem 0;
+	color: var(--clr-primary-1);
+}
+.skill{
+	margin-bottom: 1.25rem;
+}
+.skill p{
+	margin-bottom: 0.5rem;
+	text-transform: capitalize;
+	color: var(--clr-primary-1);
+
+}
+
+.skill-container{
+	background: var(--clr-primary-10);
+	height: 1.5rem;
+	width: 100%;
+	border-radius: var(--radius);
+	position: relative;
+}
+.skill-value{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: var(--clr-primary-5);
+	height: 100%;
+	width: 45%;
+	border-radius: var(--radius);
+}
+.value-75{
+	width: 75%;
+}
+.value-80{
+	width: 80%;
+}
+
+.value-85{
+	width: 85%;
+}
+
+.value-95{
+	width: 95%;
+}
+.skill-text{
+	position: absolute;
+	top: -2rem;
+	left: 45%;
+	transform: translate(-45%);
+}
+
+.skill-text-75{
+	left: 75%;
+	/* transform: translate(-75%); */
+}
+.skill-text-80{
+	left: 80%;
+	/* transform: translate(-80%); */
+}
+.skill-text-85{
+	left: 85%;
+	/* transform: translate(-85%); */
+}
+.skill-text-95{
+	left: 95%;
+	/* transform: translate(-95%); */
+}
+
 /*
 =============== 
 Timeline
