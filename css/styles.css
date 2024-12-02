@@ -829,6 +829,9 @@ Skills
 .value-85{
 	width: 85%;
 }
+.value-90{
+	width: 90%;
+}
 
 .value-95{
 	width: 95%;
@@ -836,8 +839,8 @@ Skills
 .skill-text{
 	position: absolute;
 	top: -2rem;
-	left: 45%;
-	transform: translate(-45%);
+	left: 75%;
+	transform: translate(-75%);
 }
 
 .skill-text-75{
@@ -851,6 +854,10 @@ Skills
 .skill-text-85{
 	left: 85%;
 	/* transform: translate(-85%); */
+}
+.skill-text-90{
+	left: 90%;
+	/* transform: translate(-90%); */
 }
 .skill-text-95{
 	left: 95%;
