@@ -591,12 +591,14 @@ Projects / Activities
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	transition: var(--transition-long);
-	opacity: 0;
+	transition: var(--transition);
+	opacity: 1;
 }
 .project-info p {
 	text-transform: capitalize;
 	color: var(--clr-primary-10);
+	color: var(--clr-white);
+	margin-top: 4rem;
 }
 
 .project:hover .project-info {
@@ -604,14 +606,14 @@ Projects / Activities
 }
 
 .project-img {
-	transition: var(--transition-long);
+	transition: var(--transition);
 	border-radius: var(--radius);
 	height: 20rem;
 	object-fit: cover;
 }
 
-.project:hover .project-img {
-	opacity: 0.4;
+.project-img {
+	opacity: 0.8;
 }
 
 .project::after {
@@ -623,7 +625,7 @@ Projects / Activities
 	height: 100%;
 	border: 0.25rem solid var(--clr-primary-10);
 	border-radius: var(--radius);
-	transition: var(--transition-long);
+	transition: var(--transition);
 	opacity: 0;
 }
 
@@ -651,6 +653,10 @@ Projects / Activities
 
 /* creating a three column layout with two rows with pictures spanning multiple rows */
 @media screen and (min-width: 1170px) {
+	.project:hover .project-img {
+		opacity: 0.4;
+	}
+
 	.projects-center {
 		gap: 1rem 1rem;
 		grid-template-rows: 250px 250px;
@@ -665,7 +671,7 @@ Projects / Activities
 		height: 100%;
 	}
 	/* we also need our parent container to have a height of 100%, what is the parent container??? 'project' ...this is saying 'take up 100%' of the height of the container!*/
-	.project{
+	.project {
 		height: 100%;
 	}
 	.project-1 {
