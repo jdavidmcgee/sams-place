@@ -870,6 +870,69 @@ Timeline
 ===============
 */
 
+.timeline-center{
+	width: 80vw;
+	max-width: 40rem;
+	/* background: lightgreen; */
+}
+.timeline-item{
+	border-top: 2px dashed var(--clr-primary-5);
+	margin: 0;
+	padding: 4rem 2rem;
+	position: relative;
+}
+
+.timeline p{
+	margin-bottom: 0;
+}
+.timeline-item:nth-child(even){
+	border-left: 2px dashed var(--clr-primary-5);
+	border-top-left-radius: 2rem;
+	border-bottom-left-radius: 2rem;
+	margin-right: 2rem;
+	padding-right: 0;
+}
+.timeline-item:nth-child(odd){
+	border-right: 2px dashed var(--clr-primary-5);
+	border-top-right-radius: 2rem;
+	border-bottom-right-radius: 2rem;
+	margin-left: 2rem;
+	padding-left: 0;
+}
+.timeline-item:first-child{
+	border-top: 0;
+	border-top-right-radius: 0;
+	padding-top: 2rem;
+}
+.timeline-item:last-child{
+	border-bottom-left-radius: 0;
+	padding-bottom: 2rem;
+}
+.number{
+	position: absolute;
+	top: 50%;
+	/* the translate will not work for the odd numbers...so we'll need to fix this */
+	transform: translate(-50%, -50%);
+	margin-bottom: 0;
+	background: var(--clr-primary-5);
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+	color: var(--clr-primary-10);
+	font-weight: bold;
+}
+
+.timeline-item:nth-child(even) .number{
+	left: 0;
+}
+.timeline-item:nth-child(odd) .number{
+	right: 0;
+	/* this fixes the translate issue mentioned above */
+	transform: translate(50%, -50%);
+}
+
 /*
 =============== 
 Blog
