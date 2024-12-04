@@ -18,28 +18,28 @@ navBtn.addEventListener("click", function () {
 closeBtn.addEventListener("click", function () {
   sidebar.classList.remove("show-sidebar");
 });
-// set year
-date.innerHTML = new Date().getFullYear();
 
 document.querySelectorAll('.card').forEach(card => {
-	card.addEventListener('click', e => {
-		const isFront = e.target.closest('.card-front'); // Check if click is on front
+  card.addEventListener('click', e => {
+    const isFront = e.target.closest('.card-front'); // Check if click is on front
 		const isBack = e.target.closest('.card-back'); // Check if click is on back
-
+    
 		if (isBack) {
-			// If clicked on the back, toggle the flipped state to flip it back
+      // If clicked on the back, toggle the flipped state to flip it back
 			card.classList.remove('flipped');
 		} else if (isFront) {
-			// If clicked on the front, flip the card and reset others
+      // If clicked on the front, flip the card and reset others
 			document.querySelectorAll('.card').forEach(otherCard => {
-				if (otherCard !== card) {
-					otherCard.classList.remove('flipped');
+        if (otherCard !== card) {
+          otherCard.classList.remove('flipped');
 				}
 			});
-
+      
 			card.classList.add('flipped');
 		}
 	});
 });
 
 
+// set year
+date.innerHTML = new Date().getFullYear();
