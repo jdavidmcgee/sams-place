@@ -23,7 +23,15 @@ date.innerHTML = new Date().getFullYear();
 
 document.querySelectorAll('.card').forEach(card => {
 	card.addEventListener('click', () => {
-		// Toggle the flipped class on the card
+		// Reset other cards
+		document.querySelectorAll('.card').forEach(otherCard => {
+			if (otherCard !== card) {
+				otherCard.classList.remove('flipped');
+			}
+		});
+
+		// Toggle the clicked card
 		card.classList.toggle('flipped');
 	});
 });
+
