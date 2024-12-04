@@ -21,3 +21,9 @@ closeBtn.addEventListener("click", function () {
 // set year
 date.innerHTML = new Date().getFullYear();
 
+document.querySelectorAll('.card').forEach(card => {
+	card.addEventListener('click', () => {
+		// Toggle the flipped class on the card
+		card.classList.toggle('flipped');
+	});
+});
