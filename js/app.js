@@ -22,16 +22,24 @@ closeBtn.addEventListener("click", function () {
 date.innerHTML = new Date().getFullYear();
 
 document.querySelectorAll('.card').forEach(card => {
-	card.addEventListener('click', () => {
-		// Reset other cards
-		document.querySelectorAll('.card').forEach(otherCard => {
-			if (otherCard !== card) {
-				otherCard.classList.remove('flipped');
-			}
-		});
+	card.addEventListener('click', e => {
+		const isFront = e.target.closest('.card-front'); // Check if click is on front
+		const isBack = e.target.closest('.card-back'); // Check if click is on back
 
-		// Toggle the clicked card
-		card.classList.toggle('flipped');
+		if (isBack) {
+			// If clicked on the back, toggle the flipped state to flip it back
+			card.classList.remove('flipped');
+		} else if (isFront) {
+			// If clicked on the front, flip the card and reset others
+			document.querySelectorAll('.card').forEach(otherCard => {
+				if (otherCard !== card) {
+					otherCard.classList.remove('flipped');
+				}
+			});
+
+			card.classList.add('flipped');
+		}
 	});
 });
+
 
