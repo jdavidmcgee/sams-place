@@ -42,4 +42,4 @@ document.querySelectorAll('.card').forEach(card => {
 
 
 // set year
-date.innerHTML = new Date().getFullYear();
+// date.innerHTML = new Date().getFullYear();
