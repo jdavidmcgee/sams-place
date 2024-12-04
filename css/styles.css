@@ -950,7 +950,7 @@ Blog
 /* the card-side class allows us to, in effect, place on on top of the other...since both front and back have this class and we've set backface-visibility to 'hidden' to both of them...and this will ensure the 'top' will be shown, since the bottom one is below the top in the HTML */
 .card-side {
 	backface-visibility: hidden;
-	transition: all 2s linear;
+	transition: transform 2s linear;
 	position: absolute;
 	top: 0;
 	left: 0;
