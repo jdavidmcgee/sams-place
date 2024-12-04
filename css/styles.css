@@ -963,11 +963,16 @@ Blog
 	
 }
 .card-back{
-	background: var(--clr-primary-8);
+	background: var(--clr-primary-5);
 	transform: rotateY(180deg);
 	display: grid;
 	place-items: center;
+	overflow: auto;
 
+}
+.card-back p{
+	color: var(--clr-primary-10);
+	padding: 1rem;
 }
 .card:hover .card-front{
 	transform: rotateY(-180deg);
