@@ -939,6 +939,79 @@ Blog
 ===============
 */
 
+.card{
+	/* the card, which is the container for our blog, must have a height */
+	height: 27rem;
+	position: relative;
+	/* perspective - this allows us to have a high in the sky perspective of the card...if we have a small pixel number we'll get super close.  You want just a large number */
+	perspective: 1500px;
+}
+
+/* the card-side class allows us to, in effect, place on on top of the other...since both front and back have this class and we've set backface-visibility to 'hidden' to both of them...and this will ensure the 'top' will be shown, since the bottom one is below the top in the HTML */
+.card-side {
+	backface-visibility: hidden;
+	transition: all 2s linear;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: var(--radius);
+}
+.card-front{
+	background: var(--clr-primary-10);
+	
+}
+.card-back{
+	background: var(--clr-primary-8);
+	transform: rotateY(180deg);
+	display: grid;
+	place-items: center;
+
+}
+.card:hover .card-front{
+	transform: rotateY(-180deg);
+}
+.card:hover .card-back{
+	transform: rotateY(0);
+}
+
+/* rest of the styles */
+
+.card-info{
+	padding: 1rem 1.5rem;
+}
+
+.card-front img{
+	height: 15rem;
+	object-fit: cover;
+	border-top-left-radius: var(--radius);
+	border-top-right-radius: var(--radius);
+}
+.card-footer{
+	display: grid;
+	grid-template-columns: auto 1fr;
+	align-items: center;
+}
+.card-footer img{
+	width: 2rem;
+	height: 2rem;
+	object-fit: cover;
+	border-radius: 50%;
+}
+.card-footer p{
+	margin-bottom: 0;
+	color: var(--clr-primary-1);
+	justify-self: end;
+	font-size: 0.85rem;
+}
+
+.blog-center{
+	display: grid;
+	gap: 3rem 1rem;
+	grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+}
+
 /*
 =============== 
 Footer
