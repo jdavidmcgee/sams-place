@@ -1005,6 +1005,7 @@ Blog
 	border-radius: var(--radius);
 	/* these were added by John to help with iphone */
 	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
 	visibility: visible;
 }
 .card-front {
