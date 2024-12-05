@@ -19,30 +19,30 @@ closeBtn.addEventListener("click", function () {
   sidebar.classList.remove("show-sidebar");
 });
 
-document.querySelectorAll('.card').forEach(card => {
-  card.addEventListener('click', e => {
-    const isFront = e.target.closest('.card-front'); // Check if click is on front
-		const isBack = e.target.closest('.card-back'); // Check if click is on back
+// document.querySelectorAll('.card').forEach(card => {
+//   card.addEventListener('click', e => {
+//     const isFront = e.target.closest('.card-front'); // Check if click is on front
+// 		const isBack = e.target.closest('.card-back'); // Check if click is on back
     
-		if (isBack) {
-			// If clicked on the back, toggle the flipped state to flip it back
-			card.classList.remove('flipped');
+// 		if (isBack) {
+// 			// If clicked on the back, toggle the flipped state to flip it back
+// 			card.classList.remove('flipped');
 
-			// Force repaint
-			void card.offsetHeight; // This forces the browser to reflow/repaint
-		} else if (isFront) {
-      // If clicked on the front, flip the card and reset others
-			document.querySelectorAll('.card').forEach(otherCard => {
-        if (otherCard !== card) {
-          otherCard.classList.remove('flipped');
-				}
-			});
+// 			// Force repaint
+// 			void card.offsetHeight; // This forces the browser to reflow/repaint
+// 		} else if (isFront) {
+//       // If clicked on the front, flip the card and reset others
+// 			document.querySelectorAll('.card').forEach(otherCard => {
+//         if (otherCard !== card) {
+//           otherCard.classList.remove('flipped');
+// 				}
+// 			});
       
-			card.classList.add('flipped');
-		}
-	});
-});
+// 			card.classList.add('flipped');
+// 		}
+// 	});
+// });
 
 
 // set year
-// date.innerHTML = new Date().getFullYear();
+date.innerHTML = new Date().getFullYear();
